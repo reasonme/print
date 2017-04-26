@@ -31,7 +31,7 @@ spring:
             hibernate.generate_statistics: true
             hibernate.javax.cache.provider: org.ehcache.jsr107.EhcacheCachingProvider
             hibernate.javax.cache.uri: ${spring.cache.jcache.config}
-            hibernate.cache.region.factory_class: cn.fintecher.cuibei.config.jcache.SpringCacheRegionFactory
+            hibernate.cache.region.factory_class: cn.fintecher.print.config.jcache.SpringCacheRegionFactory
     cache:
         jcache:
             config: ehcache.xml

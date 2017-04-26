@@ -22,12 +22,12 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * Created by ChenChang on 2017/1/16.
+ * Created by sunyanping on 2017/4/26.
  */
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class})
 @EnableConfigurationProperties({SummonsServiceProperties.class})
-@EntityScan("cn.fintecher.print.entity.org*")
+@EntityScan("cn.fintecher.print.entity.*")
 public class SummonsServiceApp {
     private static final Logger log = LoggerFactory.getLogger(SummonsServiceApp.class);
 

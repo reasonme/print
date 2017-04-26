@@ -9,9 +9,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 /**
- * @Author: PeiShouWen
- * @Description: 日期工具类
- * @Date 10:28 2017/3/13
+ * Created by sun on 2017/4/25 0025.
  */
 public class ZWDateUtil {
 

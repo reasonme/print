@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>cn.fintecher</groupId>
-            <artifactId>cubei-core</artifactId>
+            <artifactId>print-core</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- Swagger UI-->

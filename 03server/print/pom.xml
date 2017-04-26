@@ -109,10 +109,9 @@
                 <scope>import</scope>
             </dependency>
 
-
         </dependencies>
     </dependencyManagement>
-    <!--nexus 仓库 -->
+    <!--nexus 仓库-->
     <repositories>
         <repository>
             <id>nexus-public</id>

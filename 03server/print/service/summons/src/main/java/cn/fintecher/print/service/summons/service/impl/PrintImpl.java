@@ -1,6 +1,7 @@
 package cn.fintecher.print.service.summons.service.impl;
 
 import cn.fintecher.print.service.summons.service.PrintService;
+import org.springframework.stereotype.Service;
 
 import javax.print.*;
 import javax.print.attribute.DocAttributeSet;
@@ -15,7 +16,7 @@ import java.io.FileInputStream;
  * @Description: 打印功能实现
  * @Date 2017/4/27.
  */
-
+@Service("printService")
 public class PrintImpl implements PrintService {
 
     public void print(String filePath) throws Exception{

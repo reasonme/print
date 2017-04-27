@@ -56,7 +56,7 @@ public class WelcomeController {
         // 解决中文问题
         ITextFontResolver fontResolver = renderer.getFontResolver();
         try {
-            fontResolver.addFont("/static/fonts/simsun.ttc",
+            fontResolver.addFont("c:/static/fonts/simsun.ttc",
                     BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         } catch (DocumentException e) {
             e.printStackTrace();

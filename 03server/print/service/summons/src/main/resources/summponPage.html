@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传票页面</title>
+    <link href="summon.css" rel="stylesheet" type="text/css"/>
+    <style>
+        #company{
+            text-align: center;
+            font-size: 22px;
+        }
+        #name{
+            text-align: center;
+            font-size: 24px;
+        }
+        #end{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="company">上海市中资联集团</div>
+    <p id="name">传&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;票</p>
+    <form method="post" action="">
+        <table border="1" bordercolor="#0099ff" cellpadding="10px" cellspacing="0" align="center">
+            <tr>
+                <td>案&nbsp;&nbsp;&nbsp;号</td>
+                <td>
+                    <input  type="text" name="name" value="--请输入用户名--"/>
+                </td>
+            </tr>
+            <tr>
+                <td>案&nbsp;&nbsp;&nbsp;由</td>
+                <td>
+                    <input type="password" nam="pwd" />
+                </td>
+            </tr>
+            <tr>
+                <td>被传唤人</td>
+                <td>
+                    <input type="password" nam="pwd" />
+                </td>
+            </tr>
+            <tr>
+                <td>工作单位或地址</td>
+                <td>
+                    <input type="radio" name="sex" value="nan" checked="checked"/>Man
+                    <input type="radio" name="sex" value="nv" />Woman
+                </td>
+            </tr>
+            <tr>
+                <td>传唤事由</td>
+                <td>
+                    <input type="checkbox" name="technology" value="java"/>java
+                    <input type="checkbox" name="technology" value="html"/>html
+                    <input type="checkbox" name="technology" value="php"/>php
+                    <input type="checkbox" name="technology" value="Python">Python
+                    <input type="checkbox" name="technology" value="运维">运维
+                </td>
+            </tr>
+            <tr>
+                <td>应到时间</td>
+                <td>
+                    <select name="country"/>
+                    <option value="none">---选择国家---</option>
+                    <option value="cn">China</option>
+                    <option value="usa">American</option>
+                    <option value="en">English</option>
+                    <option value="jp">Japan</option>
+                </td>
+            </tr>
+            <tr>
+                <td>应到住所</td>
+            </tr>
+            <tr>
+                <td>
+                    <p>注意事项：1.被传唤人必须准时到达应到住所；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本传票由被传唤人携带来院报到；</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.被传唤人收到传票后，应在送达回证上签名或盖章。</p>
+                    <p>审判员：</p>
+                    <p>书记员：</p>
+                    <p>&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</p>
+                    <p>（院印）</p>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="3">
+                    <a href="http://localhost:63342/python%20文件/注册结果.html" > <input type="button" name="submit" value="打印" /></a>
+                    <input type="reset" name="reset" value="取消" />
+                </th>
+            </tr>
+        </table>
+        <p id="end">本联送到被传唤人</p>
+    </form>
+</body>
+</html>

@@ -1,10 +1,6 @@
-package cn.fintecher.print.service.summons.web;
+package cn.fintecher.print.service.summons.service.impl;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import cn.fintecher.print.service.summons.service.PrintService;
 
 import javax.print.*;
 import javax.print.attribute.DocAttributeSet;
@@ -19,17 +15,10 @@ import java.io.FileInputStream;
  * @Description: 打印功能实现
  * @Date 2017/4/27.
  */
-@RestController
-@RequestMapping("/api/print")
-@Api(value = "打印相关",description = "打印相关")
-public class Print {
 
+public class PrintImpl implements PrintService {
 
-
-    @GetMapping("/summons")
-    @ApiOperation(value = "打印操作",notes = "打印操作")
     public void print() throws Exception{
-
         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
         try {
             int state = fileChooser.showOpenDialog(null);
@@ -40,10 +29,10 @@ public class Print {
                 //设置格式
                 DocFlavor flavor = DocFlavor.INPUT_STREAM.AUTOSENSE;
                 //查找打印服务
-                PrintService printService[] = PrintServiceLookup.lookupPrintServices(flavor, pras);
-                PrintService defaultService = PrintServiceLookup.lookupDefaultPrintService();
+                javax.print.PrintService printService[] = PrintServiceLookup.lookupPrintServices(flavor, pras);
+                javax.print.PrintService defaultService = PrintServiceLookup.lookupDefaultPrintService();
                 //显示对话框
-                PrintService service = ServiceUI.printDialog(null, 200, 200, printService,
+                javax.print.PrintService service = ServiceUI.printDialog(null, 200, 200, printService,
                         defaultService, flavor, pras);
                 if(service != null){
                     DocPrintJob job = service.createPrintJob();

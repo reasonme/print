@@ -18,12 +18,12 @@ import java.io.FileInputStream;
 
 public class PrintImpl implements PrintService {
 
-    public void print() throws Exception{
+    public void print(String filePath) throws Exception{
         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
         try {
             int state = fileChooser.showOpenDialog(null);
             if(state == fileChooser.APPROVE_OPTION){
-                File file = fileChooser.getSelectedFile();
+                File file = new File(filePath);
                 //设置属性
                 HashPrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
                 //设置格式
@@ -40,6 +40,7 @@ public class PrintImpl implements PrintService {
                     DocAttributeSet das = new HashDocAttributeSet();
                     Doc doc = new SimpleDoc(fis, flavor, das);
                     job.print(doc, pras);
+                    fis.close();
                 }
             }
         }catch (Exception e){

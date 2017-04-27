@@ -6,5 +6,5 @@ package cn.fintecher.print.service.summons.service;
  * @Date 2017/4/27.
  */
 public interface PrintService {
-    void print() throws Exception;
+    void print(String filePath) throws Exception;
 }

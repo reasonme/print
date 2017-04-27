@@ -6,7 +6,6 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +35,7 @@ public class WelcomeController {
         model.put("message", "孙艳平");
 
         Template template = configuration.getTemplate("welcome.ftl");
-        String content = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
+        //String content = FreeMarkerTemplateUtils.processTemplateIntoString(template, model);
 
         File file = new File("d:/welcome.html");
         if (!file.exists()) {
@@ -56,7 +55,7 @@ public class WelcomeController {
         // 解决中文问题
         ITextFontResolver fontResolver = renderer.getFontResolver();
         try {
-            fontResolver.addFont("c:/static/fonts/simsun.ttc",
+            fontResolver.addFont("C:/windows/Fonts/simsun.ttc",
                     BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         } catch (DocumentException e) {
             e.printStackTrace();

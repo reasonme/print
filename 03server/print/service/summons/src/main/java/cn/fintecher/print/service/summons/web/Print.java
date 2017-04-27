@@ -31,30 +31,30 @@ public class Print {
     public void print() throws Exception{
 
         JFileChooser fileChooser = new JFileChooser(System.getProperty("user.dir"));
-        int state = fileChooser.showOpenDialog(null);
-        if(state == fileChooser.APPROVE_OPTION){
-            File file = fileChooser.getSelectedFile();
-            //设置属性
-            HashPrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
-            //设置格式
-            DocFlavor flavor = DocFlavor.INPUT_STREAM.AUTOSENSE;
-            //查找打印服务
-            PrintService printService[] = PrintServiceLookup.lookupPrintServices(flavor, pras);
-            PrintService defaultService = PrintServiceLookup.lookupDefaultPrintService();
-            //显示打印对话框
-            PrintService service = ServiceUI.printDialog(null, 200, 200, printService,
-                    defaultService, flavor, pras);
-            if(service != null){
-                try {
+        try {
+            int state = fileChooser.showOpenDialog(null);
+            if(state == fileChooser.APPROVE_OPTION){
+                File file = fileChooser.getSelectedFile();
+                //设置属性
+                HashPrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
+                //设置格式
+                DocFlavor flavor = DocFlavor.INPUT_STREAM.AUTOSENSE;
+                //查找打印服务
+                PrintService printService[] = PrintServiceLookup.lookupPrintServices(flavor, pras);
+                PrintService defaultService = PrintServiceLookup.lookupDefaultPrintService();
+                //显示对话框
+                PrintService service = ServiceUI.printDialog(null, 200, 200, printService,
+                        defaultService, flavor, pras);
+                if(service != null){
                     DocPrintJob job = service.createPrintJob();
                     FileInputStream fis = new FileInputStream(file);
                     DocAttributeSet das = new HashDocAttributeSet();
                     Doc doc = new SimpleDoc(fis, flavor, das);
                     job.print(doc, pras);
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

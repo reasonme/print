@@ -6,6 +6,7 @@
     <title>传票页面</title>
     <style>
         #company {
+            padding-top: 60px;
             text-align: center;
             font-size: 22px;
         }
@@ -30,7 +31,11 @@
         }
 
         .td1 {
-            width: 200px;
+            width: 150px;
+            text-align: center;
+            text-align: justify;
+            text-justify: distribute-all-lines;
+            text-align-last: justify;
         }
 
         .td2 {
@@ -43,12 +48,22 @@
 
         .p123 {
             text-align: left;
-            padding-left: 50px;
+            padding-left: 100px;
         }
 
         .p1234 {
             text-align: left;
-            padding-left: 450px;
+            padding-left: 300px;
+            padding-top: 20px;
+        }
+
+        #care {
+            padding-top: 10px;
+            padding-left: 50px;
+        }
+
+        .time {
+            padding-left: 100px；
         }
     </style>
     <!--引入js-->
@@ -67,7 +82,7 @@
 </head>
 
 <body>
-    <div id="company"></div>
+    <div id="company" style="border:10px"></div>
     <p id="name">传&nbsp;&nbsp;&nbsp;&nbsp;票</p>
 
     <table border="1" cellpadding="10px" cellspacing="0" align="center">
@@ -111,7 +126,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <p>注意事项: </p>
+                <p id="care">注意事项: </p>
                 <div class="p123">
                     <p>1.被传唤人必须准时到达应到住所；</p>
                     <p>2.本传票由被传唤人携带来院报到；</p>
@@ -121,6 +136,8 @@
                 <div class="p1234">
                     <p>审判员：<span id="judge"></span></p>
                     <p>书记员：<span id="clerk"></span></p>
+                </div>
+                <div class="time">
                     <p>
                         <span id="callYear"></span> 年
                         <span id="callMonth"></span> 月

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>传票页面</title>
+    <style>
+        #company {
+            text-align: center;
+            font-size: 22px;
+        }
+
+        #name {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #end {
+            text-align: center;
+            font-size: 15px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr,
+        td {
+            text-align: center;
+        }
+
+        .td1 {
+            width: 200px;
+        }
+
+        .td2 {
+            width: 450px;
+        }
+
+        tr td p {
+            text-align: left;
+        }
+
+        .p123 {
+            text-align: left;
+            padding-left: 50px;
+        }
+
+        .p1234 {
+            text-align: left;
+            padding-left: 450px;
+        }
+    </style>
+    <!--引入js-->
+    <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function printpage() {
+            var tit = document.title;
+            document.title = "";
+            var print = document.getElementById("print");
+            print.style.display = "none";
+            window.print();
+            document.title = tit;
+            print.style.display = "";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="company"></div>
+    <p id="name">传&nbsp;&nbsp;&nbsp;&nbsp;票</p>
+
+    <table border="1" cellpadding="10px" cellspacing="0" align="center">
+        <tr>
+            <td class="td1">案号</td>
+            <td>
+                <span>(<span id="casenumName"></span>)</span>
+                <span>(<span id="casenumWord"></span>)字</span>
+                <span>第<span id="casenumCount"></span>号</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="td1">案由</td>
+            <td><span id="caseReason"></span></td>
+        </tr>
+        <tr>
+            <td class="td1">被传唤人</td>
+            <td class="td2"><span id="calledPerson"></span></td>
+        </tr>
+        <tr>
+            <td class="td1">工作单位或地址</td>
+            <td class="td2"><span id="calledAddress"></span></td>
+        </tr>
+        <tr>
+            <td class="td1">传唤事由</td>
+            <td class="td2"><span id="calledThing"></span></td>
+        </tr>
+        <tr>
+            <td class="td1">应到时间</td>
+            <td class="td2" style="align-items: center">
+                <span><span id="arrivalsYear"></span> 年</span>
+                <span><span id="arrivalsMonth"></span> 月</span>
+                <span><span id="arrivalsDay"></span> 日</span>
+                <span><span id="arrivalsHour"></span> 时</span>
+                <span><span id="arrivalsMinute"></span> 分</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="td1">应到住所</td>
+            <td class="td2"><span id="destination"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>注意事项: </p>
+                <div class="p123">
+                    <p>1.被传唤人必须准时到达应到住所；</p>
+                    <p>2.本传票由被传唤人携带来院报到；</p>
+                    <p>3.被传唤人收到传票后，应在送达回证上签名或盖章。</p>
+                </div>
+                <br/>
+                <div class="p1234">
+                    <p>审判员：<span id="judge"></span></p>
+                    <p>书记员：<span id="clerk"></span></p>
+                    <p>
+                        <span id="callYear"></span> 年
+                        <span id="callMonth"></span> 月
+                        <span id="callDay"></span> 日
+                    </p>
+                    <p>（院印）</p>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <p id="end">本联送到被传唤人</p>
+    <div id="print" style="text-align: center;">
+        <input type="button" value="打印" onclick="printpage()" />
+    </div>
+    <script>
+        $(function () {
+            console.log(localStorage.company);
+            $("#company").html(localStorage.company)
+            $("#casenumName").text(localStorage.casenumName);
+            $("#casenumWord").text(localStorage.casenumWord);
+            $("#casenumCount").text(localStorage.casenumCount);
+            $("#caseReason").text(localStorage.caseReason);
+            $("#calledPerson").text(localStorage.calledPerson);
+            $("#calledAddress").text(localStorage.calledAddress);
+            $("#calledThing").text(localStorage.calledThing);
+            $("#arrivalsYear").text(localStorage.arrivalsYear);
+            $("#arrivalsMonth").text(localStorage.arrivalsMonth);
+            $("#arrivalsDay").text(localStorage.arrivalsDay);
+            $("#arrivalsHour").text(localStorage.arrivalsHour);
+            $("#arrivalsMinute").text(localStorage.arrivalsMinute);
+            $("#destination").text(localStorage.destination);
+            $("#judge").text(localStorage.judge);
+            $("#clerk").text(localStorage.clerk);
+            $("#callYear").text(localStorage.callYear);
+            $("#callMonth").text(localStorage.callMonth);
+            $("#callDay").text(localStorage.callDay);
+        })
+    </script>
+</body>
+
+</html>

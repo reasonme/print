@@ -1,0 +1,45 @@
+    #company {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    #name {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    #end {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    tr,
+    td {
+        text-align: center;
+    }
+
+    .td1 {
+        width: 200px;
+    }
+
+    .td2 {
+        width: 450px;
+    }
+
+    tr td p {
+        text-align: left;
+    }
+
+    .p123 {
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .p1234 {
+        text-align: left;
+        padding-left: 450px;
+    }
